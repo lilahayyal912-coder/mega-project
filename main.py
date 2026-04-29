@@ -1,4 +1,3 @@
-
 import speech_recognition as sr
 import pyttsx3
 import webbrowser
@@ -29,31 +28,23 @@ if __name__ == "__main__":
 
     speak("INITIALIZING JARVIS......")
 
-
-
     # obtain audio from the microphone
 
-while True:
+    while True:
 
         r = sr.Recognizer()
 
-       
-
-
-
         print("recognize.....")
 
-# recognize speech using Sphinx  
+        # recognize speech using Sphinx  
 
         try:
 
             with sr.Microphone() as source:
 
-               print("Listening.....")
+                print("Listening.....")
 
-               audio = r.listen(source, timeout=2, phrase_time_limit=1)
-
-
+                audio = r.listen(source, timeout=2, phrase_time_limit=1)
 
             command = r.recognize_google(audio)
 
@@ -61,4 +52,4 @@ while True:
 
         except sr.RequestError as e:
 
-                print("error; {0}".format(e))
+            print("error; {0}".format(e))
